@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-env-shim",
+  "version": "0.1.0",
+  "description": "Inject env vars for your Nuxt app at runtime",
+  "module": "index.js",
+  "repository": "https://github.com/simplesmiler/nuxt-env-shim",
+  "author": "denis.karabaza@gmail.com",
+  "license": "MIT",
+  "scripts": {
+    "dev:universal": "nuxt -c ./test/support/app/nuxt.config.js",
+    "dev:spa": "nuxt -c ./test/support/app/nuxt.config.js --spa",
+    "test": "npm run test:lint",
+    "test:lint": "eslint --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nuxt": "^2.6.0",
+    "regenerator-runtime": "^0.13.3"
+  }
+}
