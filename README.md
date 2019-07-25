@@ -4,8 +4,9 @@
 
 See https://github.com/nuxt/nuxt.js/issues/5100
 
-This module, heavily inspired by [samtgarson/nuxt-env](https://github.com/samtgarson/nuxt-env), makes environmental
-variables injection work both in unviversal in SPA mode.
+This module, heavily inspired by [samtgarson/nuxt-env](https://github.com/samtgarson/nuxt-env), makes runtime environmental
+variables injection work both in unviversal in SPA mode. It also provides shims for some other nuxt modules to work with
+runtime environmental variables (currently, only [@nuxtjs/axios](https://github.com/nuxt-community/axios-module)).
 
 ⚠ **WARNING**: As with the `config.env` option in Nuxt config, environment variables used in `nuxt-env-shim` are exposed client side, so if you store secrets use the `secret` config option. Read more below. ⚠
 
@@ -61,6 +62,25 @@ When true, this key will only be present server side.
 ##### `name`
 
 Change the name of the env var that gets injected. e.g.: `{ key: 'API_URL', name: 'API_ENDPOINT' }` will read `process.env.API_URL` and add it as `$env.API_ENDPOINT`
+
+#### Shims
+
+Shims can be enabled by setting corresponding boolean flags in the `shimModules` option:
+
+```js
+modules: [
+  ['nuxt-env-shim', {
+    shimModules: {
+      // exposes runtime environment variables API_HOST, API_PORT, API_PREFIX, API_URL and API_URL_BROWSER
+      // and instructs axios module correspondingly
+      axios: true,
+    },
+  }],
+]
+```
+
+Shims are provided for some other nuxt modules. This is how you can enable shim for the axios module:
+
 
 ### Use in your application
 

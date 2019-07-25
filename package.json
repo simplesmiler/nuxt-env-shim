@@ -13,6 +13,7 @@
     "test:lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.5.4",
     "eslint": "^6.1.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-import": "^2.18.2",

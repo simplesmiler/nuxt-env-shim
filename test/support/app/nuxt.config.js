@@ -3,6 +3,7 @@ module.exports = {
   env: { NUXT_VAL: '0' },
   modules: [
     ['~~/index.js', {
+      shimModules: { axios: true },
       keys: [
         'ENV_1',
         { key: 'ENV_2' },
@@ -11,5 +12,6 @@ module.exports = {
         { key: 'ENV_5', default: 'default' },
       ],
     }],
+    ['@nuxtjs/axios'],
   ],
 };
