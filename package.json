@@ -1,6 +1,6 @@
 {
   "name": "nuxt-env-shim",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Inject env vars for your Nuxt app at runtime",
   "module": "index.js",
   "repository": "https://github.com/simplesmiler/nuxt-env-shim",
